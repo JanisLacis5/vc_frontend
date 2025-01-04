@@ -1,0 +1,23 @@
+{
+	"name": "frontend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron --enable-logging ."
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"axios": "^1.7.8",
+		"electron": "^33.2.1",
+		"prettier": "^3.4.2"
+	},
+	"prettier": {
+		"tabWidth": 4
+	},
+	"dependencies": {
+		"@electron/remote": "^2.1.2",
+		"ws": "^8.18.0"
+	}
+}

@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Control Widget</title>
+    <link rel="stylesheet" href="../../style.css"/>
+    <link rel="stylesheet" href="./widget.css"/>
+</head>
+<body>
+<div class="widget-container">
+    <div class="operation-button-cont">
+        <div class="drag-div">&#8192</div>
+        <div class="operation-buttons">
+            <button id="minimize-operation-win"><img alt="" src="../../icons/minimize.svg"></button>
+            <button><img alt="" src="../../icons/MdiLightPin.svg"></button>
+            <button onclick="window.close()"><img alt="" src="../../icons/close.svg"></button>
+        </div>
+    </div>
+    <div class="widget-content" id="file-list">
+        <!--project file list-->
+    </div>
+    <div class="widget-footer">
+        <button class="btn" id="btn-stage-all">Stage All</button>
+        <button class="btn" id="btn-commit">Commit</button>
+    </div>
+</div>
+<script type="module" src="./widgetRenderer.js"></script>
+</body>
+</html>

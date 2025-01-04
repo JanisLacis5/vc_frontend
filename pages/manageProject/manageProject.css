@@ -1,0 +1,202 @@
+.project-info p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Base styling for the container */
+.project-files {
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgba(227, 227, 227, 0.2);
+    border: 1px solid #ddd;
+}
+
+#file-list {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+/* Remove default list styles */
+#file-list ul {
+    list-style-type: none;
+    padding-left: 10px;
+    margin: 0;
+}
+
+#file-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px; /* Space between file/folder icon, name, and checkbox */
+}
+
+/* Folders */
+#file-list li p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 5px 0;
+    font-weight: bold;
+    flex-grow: 1; /* Makes the file name take up the available space */
+}
+
+#file-list li p::before {
+    content: '📁';
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/*Folders*/
+#file-list li.folder {
+    flex-direction: column;
+}
+
+#file-list li.folder > ul {
+    padding-left: 20px;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+#file-list li.folder.collapsed > ul {
+    display: none; /* Hide child folders and files when collapsed */
+}
+
+#file-list li.folder p {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 0;
+    font-weight: bold;
+    flex-grow: 1; /* Makes the folder name take up the available space */
+}
+
+#file-list li.folder p:hover {
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+#file-list li.folder .folder-arrow {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+#file-list li.folder.collapsed .folder-arrow {
+    transform: rotate(0deg); /* Arrow points right (▶️) */
+}
+
+#file-list li.folder:not(.collapsed) .folder-arrow {
+    transform: rotate(90deg); /* Arrow points down (🔽) */
+}
+
+#file-list li.folder.collapsed ul {
+    display: none; /* Hide child folders and files */
+}
+
+#file-list li.folder ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+#file-list li ul ul {
+    padding-left: 20px;
+    border-left: 2px solid #333;
+}
+
+#file-list li.folder p {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+#file-list li.folder p:hover {
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+/* Files */
+#file-list li.file {
+    cursor: default;
+}
+
+#file-list li.file p::before {
+    content: '📄';
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+#file-list li.file input[type="checkbox"] {
+    margin-right: 8px;
+    height: 16px;
+}
+
+#file-list li.file input[type="checkbox"]:checked + p {
+    color: #007acc;
+}
+
+/* Indentation for nested folders */
+#file-list ul ul {
+    padding-left: 20px;
+    border-left: 2px solid #ddd;
+}
+
+#file-list li ul li p::before {
+    content: '📁'; /* This can be customized */
+}
+
+#file-list li ul li.file p::before {
+    content: '📄'; /* File icon */
+}
+
+/* Hover effect for folder and file names */
+#file-list li p:hover,
+#file-list li.file p:hover {
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.commits {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.commits h2 {
+    width: 90%;
+    text-align: left;
+}
+
+.commits ul {
+    border: 1px solid #ddd;
+    background-color: rgba(227, 227, 227, 0.2);
+    list-style: none;
+    width: 90%;
+    gap: 8px;
+}
+
+.commits ul li {
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: 2fr 5fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%
+}
+
+.commits li button {
+    width: 70%;
+    height: 60%;
+}
