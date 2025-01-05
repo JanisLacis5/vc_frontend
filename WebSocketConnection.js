@@ -1,5 +1,3 @@
-// import { createWidgetWindow } from "./main.js";
-
 export class WebSocketConnection {
     socketUrl;
     constructor(socketUrl) {

@@ -23,9 +23,9 @@ navLinks.forEach((link) => {
     loadPage("dashboard");
 })();
 
-// Create connection to the startup websocket
-const startupWs = new WebSocketConnection("/startup");
-startupWs.connect();
+// // Create connection to the startup websocket
+// const startupWs = new WebSocketConnection("/startup");
+// startupWs.connect();
 
-// Function to get startup websocket from the whole app
-export const getStartupWs = () => startupWs;
+// // Function to get startup websocket from the whole app
+// export const getStartupWs = () => startupWs;

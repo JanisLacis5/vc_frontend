@@ -20,8 +20,8 @@ async function createWidgetWindow() {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
     widgetWindow = new BrowserWindow({
-        width: 500 + 1000,
-        height: 200 + 1000,
+        width: 500,
+        height: 200,
         x: width - 20,
         y: 5,
         frame: false,
@@ -38,7 +38,10 @@ async function createWidgetWindow() {
 }
 
 app.whenReady()
-    .then(async () => await createMainWindow())
+    .then(async () => {
+        await createMainWindow();
+        await createWidgetWindow();
+    })
     .catch((e) => console.error(`error in the startup process: ${e}`));
 
 // Handle folder selection
@@ -53,5 +56,5 @@ ipcMain.handle("selectFolder", async () => {
     return result.filePaths[0];
 });
 
-ipcMain.handle("openWidget", () => createWidgetWindow());
-ipcMain.handle("closeWidget", () => widgetWindow.close());
+// ipcMain.handle("openWidget", () => createWidgetWindow());
+// ipcMain.handle("closeWidget", () => widgetWindow.close());

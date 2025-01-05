@@ -1,18 +1,18 @@
 import { WebSocketConnection } from "../../WebSocketConnection.js";
 import { getWidgetDomElement } from "./widgetRenderer.js";
 
-// Initialize WebSocket
-const socketManager = new WebSocketConnection("/files");
+// // Initialize WebSocket
+// const socketManager = new WebSocketConnection("/files");
 
 export function confiugreActionButtons() {
-    const commitButton = getWidgetDomElement("btn-commit");
-    commitButton.addEventListener("click", async () => {
-        console.log("here at least");
-        const appState = await window.api.getAppState();
-        const commit = await window.api.commitFiles(
-            appState.currentProjectId,
-            {},
-        );
-        console.log(commit);
-    });
+    const commitAllButton = getWidgetDomElement("btn-commit-all");
+    const commitCurrentButton = getWidgetDomElement("btn-commit-current");
+    const stageAllButton = getWidgetDomElement("btn-stage-all");
+    commitAllButton.addEventListener("click", () =>
+        alert("all files commited"),
+    );
+    commitCurrentButton.addEventListener("click", () =>
+        alert("current file commited"),
+    );
+    stageAllButton.addEventListener("click", () => alert("all files staged"));
 }

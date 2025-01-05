@@ -17,7 +17,7 @@ export async function setProjectInfo(project) {
 }
 
 async function setProjectFiles(project) {
-    const files = await window.api.getProjectFiles(project.id);
+    const files = await window.api.getProject().files;
     const fileTree = buildTree(files);
     const fileTreeContainer = getDomElement("file-list");
     renderTree(fileTree, fileTreeContainer);
@@ -26,7 +26,7 @@ async function setProjectFiles(project) {
 
 async function setCommitHistory(project) {
     // Get all commits and needed DOM elements
-    const commits = await window.api.getCommits(project.id);
+    const commits = await window.api.getCommits();
     const commitList = getDomElement("commit-list");
 
     // Add commits to the list
@@ -155,11 +155,11 @@ function trackCheckboxChanges(container) {
 }
 
 export async function setManageProjectPage() {
-    // Get app's state
-    const appState = await window.api.getAppState();
+    // // Get app's state
+    // const appState = await window.api.getAppState();
 
     // Get the project
-    const project = await window.api.getProject(appState.currentProjectId);
+    const project = await window.api.getProject();
 
     // Add click listeners to buttons
     const saveButton = getDomElement("save-file-track");
